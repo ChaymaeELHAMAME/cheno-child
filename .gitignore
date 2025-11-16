@@ -1,0 +1,32 @@
+# -- WordPress core (jamais dans un repo de thème)
+wp-admin/
+wp-includes/
+*.sql
+*.zip
+
+# -- Dossiers générés / cache
+node_modules/
+vendor/
+.DS_Store
+Thumbs.db
+
+# -- Fichiers de LocalWP
+*.log
+/local/
+/app/sql/
+/conf/
+/logs/
+/bin/
+
+# -- WordPress uploads (photos du site)
+../../uploads/
+../../../uploads/
+
+# -- Système
+*.tmp
+*.swp
+*.swo
+*.bak
+
+# -- cache VS Code
+.vscode/
