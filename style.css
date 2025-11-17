@@ -51,11 +51,18 @@ h1,h2,h3{color:#fff;margin:0 0 12px}
 }
 .main-nav .nav-menu > li > a:hover{ color:var(--accent); }
 .main-nav .nav-menu li{ position:relative; }
-.main-nav .nav-menu li ul{
-  position:absolute; left:0; top:calc(100% + 12px); min-width:220px;
-  background:#111114; border:1px solid rgba(255,255,255,.08);
-  border-radius:10px; padding:8px 0; display:none;
+.main-nav .nav-menu li ul {
+  position:absolute;
+  left:0;
+  top:100%;                /* ✔️ ما بقا لا فراغ لا والو */
+  min-width:220px;
+  background:#111114;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:10px;
+  padding:8px 0;
+  display:none;
 }
+
 .main-nav .nav-menu li:hover > ul{ display:block; }
 .main-nav .nav-menu li ul li a{
   display:block; padding:10px 14px; white-space:nowrap; color:#e8e8e8;
@@ -3168,5 +3175,284 @@ body.admin-bar .mobile-menu__overlay {
   .about-section .testi__title{
     font-size: 22px;
     line-height: 1.3;
+  }
+}
+/* ===== Section Team (Agence Web Maroc) ===== */
+
+.team-section {
+  background: var(--bg);
+  padding: 70px 0 90px;
+}
+
+.team-section__inner {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+/* Badge "The Team" qui saute */
+.team-tag {
+  position: relative;
+  left: 50%;                         /* ✅ centre horizontalement */
+  transform: translate(-50%, 0);     /* recentre par rapport à sa largeur */
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  background: #a855f7;
+  color: #0b0b0c;
+  margin-bottom: 18px;
+
+  animation: teamFloat 3s ease-in-out infinite;
+}
+
+
+@keyframes teamFloat {
+  0%, 100% { transform: translate(-50%, -6px); }
+  50%      { transform: translate(-50%,  6px); }
+}
+
+/* H2 */
+.team-title {
+  font-family: 'Poppins','Inter',sans-serif;
+  font-size: clamp(30px, 4.2vw, 40px);
+  line-height: 1.25;
+  font-weight: 800;
+  letter-spacing: -.3px;
+  color: #fff;
+  margin: 0 0 30px;
+}
+
+.team-title__accent {
+  color: var(--accent);
+}
+
+/* Grille image + texte */
+.team-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+  gap: 30px;
+  align-items: center;
+}
+
+/* Image */
+.team-media {
+  margin: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 22px 60px rgba(0,0,0,.65);
+  background: #111114;
+}
+
+.team-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Texte */
+.team-content {
+  font-size: 15px;
+  color: #e5e7eb;
+}
+
+.team-intro,
+.team-outro {
+  margin: 0 0 14px;
+  line-height: 1.7;
+}
+
+.team-list {
+  margin: 0 0 16px;
+  padding-left: 18px;
+}
+
+.team-list li {
+  margin-bottom: 6px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-media {
+    max-width: 520px;
+    margin: 0 auto 22px;
+  }
+
+  .team-title {
+    font-size: 24px;
+  }
+}
+/* ===== Parcours 100% digital, 0% headache ===== */
+.process{
+  background: var(--bg);
+  padding: 70px 0 80px;
+}
+
+.process__grid{
+  display:grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+  gap: 52px;
+  align-items:flex-start;
+}
+
+/* Colonne gauche */
+.process__left{
+  position:relative;
+  max-width: 520px;
+}
+
+.process__title{
+  font-family:'Poppins','Inter',sans-serif;
+  font-weight:800;
+  font-size:clamp(32px, 5vw, 48px);
+  line-height:1.16;
+  letter-spacing:-.3px;
+  color:#fff;
+  margin:0 0 18px;
+}
+
+.process__text{
+  margin: 18px 0 18px;
+  font-size:15px;
+  line-height:1.7;
+  color:#e0e0e0;
+}
+
+.process__cta{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  font-weight:800;
+  font-size:15px;
+  color:var(--accent);
+  text-decoration:none;
+  margin-top:4px;
+}
+.process__cta::after{
+  content:"↗";
+  font-size:13px;
+  transform:translateY(-1px);
+}
+.process__cta:hover{
+  text-decoration:underline;
+}
+
+/* Badges "Web application" / "Developers" qui sautent */
+.process-badge{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:7px 12px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:700;
+  line-height:1;
+  background:#ffb79c;   /* couleur type maquette */
+  color:#111;
+  box-shadow:0 2px 0 rgba(0,0,0,.25);
+  white-space:nowrap;
+
+  animation: processBob 3.6s ease-in-out infinite;
+}
+
+.process-badge--top{
+  margin-left: clamp(160px, 22vw, 260px); /* position à droite du titre */
+  margin-bottom: 26px;
+}
+
+.process-badge--bottom{
+  margin-left: clamp(190px, 25vw, 290px); /* position vers la droite du CTA */
+  margin-top: 10px;
+  background:#ff9466;
+}
+
+@keyframes processBob{
+  0%,100%{ transform: translateY(-6px); }
+  50%    { transform: translateY( 6px); }
+}
+
+/* Colonne droite : étapes */
+.process__right{
+  color:#e9e9e9;
+}
+
+.process__steps{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:grid;
+  gap:18px;
+}
+
+.process-step{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:14px;
+  align-items:flex-start;
+}
+
+/* bloc icône + numéro */
+.step-icon{
+  width:40px;
+  height:40px;
+  border-radius:12px;
+  background:rgba(247,181,0,.06);          /* plus léger comme la maquette */
+  border:1px solid rgba(247,181,0,.6);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-top:4px;                           /* aligne bien avec le texte */
+}
+
+.step-icon img{
+  max-width:24px;
+  max-height:24px;
+  display:block;
+}
+
+/* plus besoin de ce span */
+.step-icon__num{
+  display:none;
+}
+
+/* texte étape */
+.step-title{
+  margin:0 0 4px;
+  font-size:15px;
+  font-weight:800;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+
+.step-title__num{
+  color:var(--accent);
+  font-weight:800;
+  font-size:14px;
+}
+
+/* texte étape */
+.step-body{
+  font-size:13px;
+  line-height:1.7;
+  color:#e0e0e0;
+}
+
+/* responsive */
+@media (max-width: 900px){
+  .process__grid{
+    grid-template-columns:1fr;
+    gap:34px;
   }
 }

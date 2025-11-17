@@ -377,6 +377,13 @@ add_filter('template_include', function($template) {
             return $en_tpl;
         }
     }
+    // Page FR "qui-sommes-nous" => utilise Apropos.php
+    if (is_page('agence-web-maroc')) {
+        $fr_tpl = get_stylesheet_directory() . '/agence-web-maroc.php';
+        if (file_exists($fr_tpl)) {
+            return $fr_tpl;
+        }
+    }
 
     return $template;
 });
