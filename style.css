@@ -392,16 +392,48 @@ html, body { overflow-x: hidden; }
   animation-play-state: paused;
 }
 /* H2 en une seule balise (tu as déjà le style de base) */
+/* Titre hero */
 .hero-title{
   font-family:'Poppins','Inter',sans-serif;
-  font-size:clamp(38px, 5.8vw, 64px);
+  font-size:clamp(36px, 5vw, 62px); 
   line-height:1.1;
   font-weight:800;
-  letter-spacing:-0.4px;
+  letter-spacing:-0.5px;
   color:#fff;
-  margin:0 0 22px;
+  margin-bottom:24px;
 }
-.hero-title .accent{ color:var(--accent); }
+
+/* Mot "Dominate" avec dégradé jaune → blanc */
+.hero-title .accent {
+  background: linear-gradient(
+    90deg,
+    #f7b500,
+    #ffffff,
+    #f7b500
+  );
+  background-size: 300%;
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+
+  
+}
+/* Gradient animé jaune → blanc → jaune */
+.testi__title .accent {
+  background: linear-gradient(
+    90deg,
+    #f7b500,
+    #ffffff,
+    #f7b500
+  );
+  background-size: 300%;
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+ 
+}
+
+
 
 /* Chip verte (flottante) */
 .chip{
@@ -2888,7 +2920,17 @@ body.admin-bar .mobile-menu__overlay {
   color: #fff;
 }
 .engine__title .accent {
-  color: var(--accent);
+   background: linear-gradient(
+    90deg,
+    #f7b500,
+    #ffffff,
+    #f7b500
+  );
+  background-size: 300%;
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  
 }
 
 /* texte à droite */
@@ -3229,7 +3271,16 @@ body.admin-bar .mobile-menu__overlay {
 }
 
 .team-title__accent {
-  color: var(--accent);
+  background: linear-gradient(
+    90deg,
+    #f7b500,
+    #ffffff,
+    #f7b500
+  );
+  background-size: 300%;
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
 }
 
 /* Grille image + texte */
@@ -3318,6 +3369,19 @@ body.admin-bar .mobile-menu__overlay {
   letter-spacing:-.3px;
   color:#fff;
   margin:0 0 18px;
+}
+.process__title .accent{
+  background: linear-gradient(
+    90deg,
+    #f7b500,
+    #ffffff,
+    #f7b500
+  );
+  background-size: 300%;
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  
 }
 
 .process__text{

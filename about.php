@@ -345,8 +345,8 @@ get_header();
 
       <div class="engine__grid">
         <div>
-          <h2 class="engine__title">
-            <span class="accent">Growing</span>, innovating,<br>
+          <h2 class="testi__title">
+            <span class="accent">Growing</span>, innovating,
             inspiring – This is our engine
           </h2>
         </div>
