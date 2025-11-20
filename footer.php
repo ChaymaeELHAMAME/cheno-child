@@ -11,7 +11,7 @@ if ( function_exists( 'pll_current_language' ) ) {
 }
 
 /**
- *  Textes du footer gérés en PHP (sans interface Polylang)
+ *  Textes du footer gérés en PHP sans interface Polylang
  * On stocke toutes les chaînes FR / EN dans un tableau,
  * puis on utilisera $t['clé'] pour afficher le texte.
  */
@@ -239,6 +239,6 @@ $t = $footer_txt[ $lang ];
   </div>
 </footer>
 
-<?php wp_footer(); // Hook WordPress obligatoire avant la fermeture de </body> ?>
+<?php wp_footer();  ?>
 </body>
 </html>

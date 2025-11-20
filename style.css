@@ -133,7 +133,7 @@ h1,h2,h3{color:#fff;margin:0 0 12px}
 
 /* H2 */
 .hero-title{
-  font-family:'Poppins','Inter',sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size:clamp(50px, 7vw, 84px);
   line-height:1.08;
   font-weight:800;
@@ -393,15 +393,7 @@ html, body { overflow-x: hidden; }
 }
 /* H2 en une seule balise (tu as déjà le style de base) */
 /* Titre hero */
-.hero-title{
-  font-family:'Poppins','Inter',sans-serif;
-  font-size:clamp(36px, 5vw, 62px); 
-  line-height:1.1;
-  font-weight:800;
-  letter-spacing:-0.5px;
-  color:#fff;
-  margin-bottom:24px;
-}
+
 
 /* Mot "Dominate" avec dégradé jaune → blanc */
 .hero-title .accent {

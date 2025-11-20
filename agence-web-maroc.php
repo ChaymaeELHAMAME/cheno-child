@@ -1,8 +1,6 @@
 <?php
 /**
  * Template Name: Agence Web Maroc
- * Ce fichier définit un template de page personnalisé dans WordPress
- * pour la page "Agence Web Maroc".
  */
 
 // header.php
