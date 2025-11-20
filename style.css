@@ -839,12 +839,12 @@ html, body { overflow-x: hidden; }
 }
 
 /* Partie outline (contour blanc, intérieur transparent) */
-.mega-stroke{
-  color: transparent;
-  -webkit-text-stroke: 2px #fff;           /* Safari/Chromium */
-          text-stroke: 2px #fff;           /* draft, certains navigateurs */
-  margin-right: .35em;                     /* espace avant le mot jaune */
+.mega-stroke {
+  color: transparent;                     /* texte transparent (intérieur) */
+  -webkit-text-stroke: 2px #fff;          /* contour blanc compatible Chrome / Safari */
+  margin-right: .35em;                    /* espace entre les deux mots */
 }
+
 
 /* Mot final plein en jaune */
 .mega-fill{

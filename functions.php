@@ -1,4 +1,9 @@
 <?php
+// 🔁 Réinitialiser le flag du seed "Works"
+/**add_action('admin_init', function () {
+    delete_option('cheno_seed_works_done');
+});*/
+
 
 /** ========================
  *  STYLES (CSS / JS)
@@ -214,11 +219,11 @@ add_action('admin_init', function () {
  *  ======================== */
 /**
  * @param string $file_path Chemin absolu vers le fichier sur le serveur (dans le thème enfant)
- * @param string|null $filename Nom du fichier dans la médiathèque (optionnel)
+ * @param string|null $filename Nom du fichier dans la médiathèque 
  * @return int|WP_Error ID de l’attachement ou erreur
  */
 function cheno_import_image_as_attachment($file_path, $filename = null) {
-  // Détecte le type MIME du fichier
+  // Détecte le type  du fichier
   $filetype = wp_check_filetype(basename($file_path), null);
   $filename = $filename ?: basename($file_path);
 
@@ -244,7 +249,7 @@ function cheno_import_image_as_attachment($file_path, $filename = null) {
   // Crée l’attachement dans la base de données
   $attach_id = wp_insert_attachment($attachment, $new_path);
 
-  // Génère les métadonnées (taille, miniatures, etc.)
+  // Génère les métadonnées
   require_once ABSPATH . 'wp-admin/includes/image.php';
   $attach_data = wp_generate_attachment_metadata($attach_id, $new_path);
   wp_update_attachment_metadata($attach_id, $attach_data);
@@ -388,6 +393,12 @@ add_filter('template_include', function($template) {
      // Page FR "qui-sommes-nous" => utilise Apropos.php
     if (is_page('morocco-web-agency')) {
         $fr_tpl = get_stylesheet_directory() . '/morocco-web-agency.php';
+        if (file_exists($fr_tpl)) {
+            return $fr_tpl;
+        }
+    }
+     if (is_page('agence-web-offshore')) {
+        $fr_tpl = get_stylesheet_directory() . '/agence-web-offshore.php';
         if (file_exists($fr_tpl)) {
             return $fr_tpl;
         }

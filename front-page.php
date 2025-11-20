@@ -260,50 +260,74 @@ get_header();
     </div>
   </section>
 
-  <section class="works">
-  <div class="works__grid">
-    <?php
-    $query = new WP_Query([
-      'post_type'      => 'work',
-      'posts_per_page' => -1,
-      'orderby'        => 'menu_order',
-      'order'          => 'ASC',
-    ]);
+ <section class="works">
+    <div class="works__grid">
 
-    if ($query->have_posts()) :
-      while ($query->have_posts()) : $query->the_post();
-        $tags = get_the_terms(get_the_ID(), 'work_tag');
-        ?>
-        <article class="work">
-          <a class="work__link" href="<?php the_permalink(); ?>">
-            <figure class="work__media">
-              <?php if (has_post_thumbnail()) : ?>
-                <?php the_post_thumbnail('work_card'); ?>
-              <?php else : ?>
-                <img src="<?php echo esc_url(get_stylesheet_directory_uri() . '/assets/img/placeholder.png'); ?>" alt="">
-              <?php endif; ?>
-            </figure>
+      <?php $img = get_stylesheet_directory_uri() . '/assets/img/'; ?>
 
-            <h3 class="work__title"><?php the_title(); ?></h3>
-          </a>
+      <!-- Work #1 -->
+      <article class="work">
+        <a class="work__link" href="#">
+          <figure class="work__media">
+            <img src="<?php echo esc_url( $img . 'elegent morocco.png' ); ?>" alt="Elegant Morocco — couverture">
+            <figcaption class="work__overlay">
+              <img class="work__mark" src="<?php echo esc_url( $img . 'elegant-morocco.png' ); ?>" alt="" aria-hidden="true">
+            </figcaption>
+          </figure>
+          <h3 class="work__title">Elegant Morocco</h3>
+        </a>
 
-          <?php if ($tags && !is_wp_error($tags)) : ?>
-            <ul class="work__tags">
-              <?php foreach ($tags as $t) : ?>
-                <li><?php echo esc_html($t->name); ?></li>
-              <?php endforeach; ?>
-            </ul>
-          <?php endif; ?>
-        </article>
-        <?php
-      endwhile;
-      wp_reset_postdata();
-    else :
-      echo '<p>Aucun projet pour le moment.</p>';
-    endif;
-    ?>
-  </div>
-</section>
+        <ul class="work__tags">
+          <li>Branding</li><li>Design UI/UX</li><li>Stratégie</li><li>Développement</li>
+        </ul>
+      </article>
+
+      <!-- Work #2 -->
+      <article class="work">
+        <a class="work__link" href="#">
+          <figure class="work__media">
+            <img src="<?php echo esc_url( $img . 'opaleon.png' ); ?>" alt="Opaleon — couverture">
+          </figure>
+          <h3 class="work__title">Opaleon</h3>
+        </a>
+
+        <ul class="work__tags">
+          <li>Design UI/UX</li><li>Développement</li><li>Logo</li>
+        </ul>
+      </article>
+
+      <!-- Pinarello App -->
+      <article class="work">
+        <a class="work__link" href="#">
+          <figure class="work__media">
+            <img
+              src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/our-expertises.png' ); ?>"
+              alt="Pinarello App — couverture">
+          </figure>
+          <h3 class="work__title">Pinarello App</h3>
+        </a>
+        <ul class="work__tags">
+          <li>Design UI/UX</li><li>Développement</li>
+        </ul>
+      </article>
+
+      <!-- Cadenza -->
+      <article class="work">
+        <a class="work__link" href="#">
+          <figure class="work__media">
+            <img
+              src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/cadenza.png' ); ?>"
+              alt="Cadenza — couverture">
+          </figure>
+          <h3 class="work__title">Cadenza</h3>
+        </a>
+        <ul class="work__tags">
+          <li>Design UI/UX</li><li>Stratégie</li><li>Logo</li>
+        </ul>
+      </article>
+
+    </div>
+  </section>
 
 
   <!-- Services intro (2 colonnes) -->

@@ -270,7 +270,7 @@ get_header();
           <figure class="work__media">
             <img src="<?php echo esc_url( $img . 'elegent morocco.png' ); ?>" alt="Elegant Morocco — couverture">
             <figcaption class="work__overlay">
-              <img class="work__mark" src="<?php echo esc_url( $img . 'elegent morocco.png' ); ?>" alt="" aria-hidden="true">
+              <img class="work__mark" src="<?php echo esc_url( $img . 'elegant-morocco.png' ); ?>" alt="" aria-hidden="true">
             </figcaption>
           </figure>
           <h3 class="work__title">Elegant Morocco</h3>
